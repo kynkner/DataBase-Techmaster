@@ -23,13 +23,13 @@ inner join category on film_category.category_id = category.category_id
 where rating = 'R';
 --------------------------------------------------------------------------------------
 5.Lấy ra thông tin của các bộ phim mà diễn viên NICK WAHLBERG tham gia
-select * from film 
+select * from film  // chỉ hiển thị film select film.* from film
 inner join film_actor on film.film_id = film_actor.film_id 
 inner join actor on film_actor.actor_id = actor.actor_id
 where first_name = 'NICK' and first_name = 'WAHLBERG';
 --------------------------------------------------------------------------------------
 6.Tìm email của các khách hàng ở Mỹ
-select * from customer
+select * from customer  // chỉ hiển thị customer select customer.* from customer
 inner join address on customer.address_id = address.address_id
 inner join city on address.city_id = city.city_id
 inner join country on city.country_id = country.country_id
