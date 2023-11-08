@@ -28,7 +28,5 @@ Dùng bảng persion giải tiếp các bài tập sau:
  order by birthday desc;
 --------------------------------------------------------------------------------------------------
 8.Lấy ra các nghề nghiệp (job) và tổng số lượng người làm nghề đó, nhưng chỉ hiển thị những nghề nghiệp có ít nhất 3 người làm.
- select * from Person
- order by birthday desc;
  select job, count(*) as 'quantity' from Person
  group by job having count(*) >= 3;
