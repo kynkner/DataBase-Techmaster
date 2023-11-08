@@ -99,7 +99,10 @@ inner join Categories on Categories.category_id = Products.category_id
 group by category_name;
 -------------------------------------------------------------------------------------
 5. Tính tổng số lượng sản phẩm đã đặt bởi mỗi khách hàng (customer_name, total_ordered)
-
+select Customers.customer_name, sum(quantity) as 'total_ordered' from  Orders 
+inner join OrderDetails on OrderDetails.order_id = Orders.order_id
+inner join Customers on Customers.customer_id = Orders.customer_id
+group by customer_name;
 -------------------------------------------------------------------------------------
 6. Lấy thông tin danh mục có nhiều sản phẩm nhất (category_name, product_count)
 select  Categories.category_name, count(*) as 'product_count'from Categories
@@ -109,12 +112,22 @@ order by count(*) desc
 limit 1;
 -------------------------------------------------------------------------------------
 7. Tính tổng số sản phẩm đã được đặt cho mỗi danh mục (category_name, total_ordered)
-
+select Categories.category_name, count(*) as 'total_ordered' from Products
+inner join Categories on Categories.category_id =  Products.category_id
+group by category_name;
 -------------------------------------------------------------------------------------
 8. Lấy thông tin về top 3 khách hàng có số lượng sản phẩm đặt hàng lớn nhất (customer_id, customer_name, total_ordered)
-
+select Customers.customer_name, sum(quantity) as 'total_ordered' from  Orders 
+inner join OrderDetails on OrderDetails.order_id = Orders.order_id
+inner join Customers on Customers.customer_id = Orders.customer_id
+group by customer_name
+order by total_ordered desc
+limit 3;
 -------------------------------------------------------------------------------------
 9. Lấy thông tin về khách hàng đã đặt hàng nhiều hơn một lần trong khoảng thời gian cụ thể từ ngày A -> ngày B (customer_id, customer_name, total_orders)
-
+select Customers.*, count(*) as 'total_orders', Orders.order_date from Orders
+inner join Customers on Customers.customer_id = Orders.customer_id
+group by customer_id, order_date
+having  day(order_date) between 22 and 29;
 -------------------------------------------------------------------------------------
 10.Lấy thông tin về các sản phẩm đã được đặt hàng nhiều lần nhất và số lượng đơn đặt hàng tương ứng (product_id, product_name, total_ordered)
