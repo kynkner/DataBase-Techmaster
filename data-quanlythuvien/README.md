@@ -45,56 +45,56 @@
 ## 3. Ánh xạ lược đồ E-R
 ![](Ánh%20xạ%20lược%20đồ%20E-R.drawio%20(1).png)
 
-## • Tài khoản(id_account, name, password)
+## 1. Tài khoản(id_account, name, password)
     id_account -> name
     id_account -> password
-## • Nhân viên (id_satff, name, birthday, address, , id_wage, id_account)
+## 2. Nhân viên (id_satff, name, birthday, address, , id_wage, id_account)
     id_satff -> name
     id_satff -> birthday
     id_satff -> address
     id_satff -> phone_number
     id_satff -> id_wage
     id_satff -> id_account
-## • Lương nhân viên (id_wage, position, wage)
+## 3. Lương nhân viên (id_wage, position, wage)
     id_wage - > positon
     id_wage -> wage
-## • Người đọc(id_reader, name, birthday, address, phone_number, id_wage)
+## 4. Người đọc(id_reader, name, birthday, address, phone_number, id_wage)
     id_reader -> name
     id_reader -> birthday
     id_reader -> address
     id_reader -> phone_number
     id_reader -> id_wage
-## • Loại người đọc(id_typereader, type_of_person)
+## 5. Loại người đọc(id_typereader, type_of_person)
     id_typereader -> type_of_person
-## • Sách(id_book, name, author, publishing_year,  id_booktype)
+## 6. Sách(id_book, name, author, publishing_year,  id_booktype)
     id_book -> name
     id_book -> author
     id_book -> publishing_year
     id_book -> id_booktype
-## • Loại sách(id_booktype, book_type, describe)
+## 7. Loại sách(id_booktype, book_type, describe)
     id_booktype -> book_type
     id_booktype -> describe
-## • Hóa đơn nhập sách(id_bill, id_book, id_booksupplier, date_added, price)
+## 8. Hóa đơn nhập sách(id_bill, id_book, id_booksupplier, date_added, price)
     id_bill -> id_book
     id_bill -> id_booksupplier
     id_bill -> price
     id¬_bill -> date_added
-## • Nơi cung cấp sách(id_booksupplier, name, address, phone_number)
+## 9. Nơi cung cấp sách(id_booksupplier, name, address, phone_number)
     id_booksupplier -> name
     id_booksupplier -> address
     id_booksupplier -> phone_number
-## • Mượn sách(id_payment, id_reader, id_book)
+## 10. Mượn sách(id_payment, id_reader, id_book)
     id_payment -> id_reader
     id_payment -> id_book
-## • Thông tin mượn sách(id_borrowbook, id_payment, borowed_day, expected_payment)
+## 11. Thông tin mượn sách(id_borrowbook, id_payment, borowed_day, expected_payment)
     id_borrowbook -> id_payment
     id_borrowbook -> borowed_day
     id_borrowbook -> expected_payment
-## • Thông tin trả sách(id_paybook, id_payment, pay_day¸ condition)
+## 12. Thông tin trả sách(id_paybook, id_payment, pay_day¸ condition)
     id_paybook -> id_payment
     id_paybook -> pay_day
     id_paybook -> condition
-## • Hóa đơn mượn trả sách(id_bookbill, id_borrowbook, id_paybook, confirm, date_created, id_staff)
+## 13. Hóa đơn mượn trả sách(id_bookbill, id_borrowbook, id_paybook, confirm, date_created, id_staff)
     id_bookbill -> id_borrowbook
     id_bookbill -> id_paybook
     id_bookbill -> confirm
