@@ -39,8 +39,6 @@
     -	Một loại sách có thể có một sách hoặc nhiều sách(1-n)
     -	Một sách có thể có nhiều nơi cung cấp, nơi cung cấp cũng có thể có nhiều sách(n-n)
     -	Một người đọc có thể mượn một sách hoặc nhiều sách, sách cũng có thể có một hoặc nhiều người đọc mượn(n-n)
-    -	Một hóa đơn mượn trả sách chỉ có 1 hóa đơn mượn sách(1-1)
-    -	Một hóa đơn mượn trả sách chỉ có 1 hóa đơn trả sách(1-1)
 ## 2. Lược đồ E-R
 ![](classdirma.drawio.png)
 
